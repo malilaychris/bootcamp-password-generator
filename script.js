@@ -1,5 +1,6 @@
 const passwordButton = document.getElementById("generatePasswordButton");
 const passwordBox = document.getElementById("passwordBox");
+const copyButton = document.getElementById("copyButton");
 
 let alphaString = "abcdefghijklmnopqrstuvwxyz";
 let numString = "123456789";
@@ -66,3 +67,11 @@ function randomizer() {
 }
 
 passwordButton.addEventListener("click", generatePassword);
+
+function copyPassword() {
+  passwordBox.select();
+  passwordBox.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+}
+
+copyButton.addEventListener("click", copyPassword);
